@@ -83,7 +83,7 @@ export function executeSendMessage(uid, message) {
 
 		if (netScore < scoreThreshold) {
 			const catUser = Users.findOneById('rocket.cat');
-			sendMessage(catUser, { msg: 'This message may be subject of an identity theft!!!' }, room, false);
+			sendMessage(catUser, { msg: `This message may not come from ${user.username}!!!` }, room, false);
 		}
 
 		metrics.messagesSent.inc(); // TODO This line needs to be moved to it's proper place. See the comments on: https://github.com/RocketChat/Rocket.Chat/pull/5736
