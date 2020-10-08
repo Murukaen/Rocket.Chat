@@ -10,10 +10,10 @@ const makeVerify = (user, pattern) => {
 };
 
 const mapUser = username => {
-    switch(username) {
-        case 'Octa':
+    switch(username.toLowerCase()) {
+        case 'octa':
             return 'test1@typingdna.com';
-        case 'Razvan':
+        case 'razvan':
             return 'test2@typingdna.com';
     }
 

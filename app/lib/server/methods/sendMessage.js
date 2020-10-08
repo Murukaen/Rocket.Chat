@@ -79,6 +79,8 @@ export function executeSendMessage(uid, message) {
 		const netScore = makeVerify(mapUser(user.username), message.tp.trim());
 		const room = canSendMessage(rid, { uid, username: user.username, type: user.type });
 
+		console.log('netScore', netScore);
+
 		if (netScore < scoreThreshold) {
 			const catUser = Users.findOneById('rocket.cat');
 			sendMessage(catUser, { msg: 'This message may be subject of an identity theft!!!' }, room, false);
