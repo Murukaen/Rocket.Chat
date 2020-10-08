@@ -263,7 +263,6 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-push": "meteor npm run lint && meteor npm run testunit"
 		}
 	},
 	"houston": {
