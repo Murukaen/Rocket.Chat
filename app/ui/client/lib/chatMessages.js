@@ -245,7 +245,7 @@ export class ChatMessages {
 		this.$input.setCursorPosition(cursorPosition);
 	}
 
-	async send(event, { rid, tmid, value, tshow }, done = () => {}) {
+	async send(event, { rid, tmid, value, tshow, tp }, done = () => {}) {
 		const threadsEnabled = settings.get('Threads_enabled');
 
 		MsgTyping.stop(rid);
@@ -287,6 +287,8 @@ export class ChatMessages {
 				tmid,
 				msg,
 			});
+
+			message.tp = tp;
 
 			try {
 				await this.processMessageSend(message);

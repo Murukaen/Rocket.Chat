@@ -102,7 +102,9 @@ Template.messageBox.onCreated(function() {
 			return;
 		}
 
-		onSend.call(this.data, event, { rid, tmid, value, tshow }, () => {
+		const tp = this.tdna.getTypingPattern({type: 0});
+
+		onSend.call(this.data, event, { rid, tmid, value, tshow, tp }, () => {
 			autogrow.update();
 			input.focus();
 		});
