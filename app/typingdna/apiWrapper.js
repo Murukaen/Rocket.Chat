@@ -13,6 +13,8 @@ const mapUser = username => {
     switch(username) {
         case 'Octa':
             return 'test1@typingdna.com';
+        case 'Razvan':
+            return 'test2@typingdna.com';
     }
 
     return '';
