@@ -38,7 +38,11 @@ import './messageBoxNotSubscribed';
 import './messageBox.html';
 import './messageBoxReadOnly';
 
+const TypingDNA = require('./typingdna.js');
+
 Template.messageBox.onCreated(function() {
+
+	this.tdna = new TypingDNA();
 	this.state = new ReactiveDict();
 	this.popupConfig = new ReactiveVar(null);
 	this.replyMessageData = new ReactiveVar();
@@ -103,7 +107,7 @@ Template.messageBox.onCreated(function() {
 			input.focus();
 		});
 	};
-});
+}); 
 
 Template.messageBox.onRendered(function() {
 	const $input = $(this.find('.js-input-message'));
